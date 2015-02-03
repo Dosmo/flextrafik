@@ -43,6 +43,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HelperLayer\HelperLayer.csproj">
+      <Project>{94dd35ee-4de8-47c7-9117-b66aeac828ed}</Project>
+      <Name>HelperLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ModelLayer\ModelLayer.csproj">
       <Project>{e32f51ed-60e4-4ac5-b19a-1aded619260c}</Project>
       <Name>ModelLayer</Name>

@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace ModelLayer
 {
-    class Firma
+    public class Firma
     {
+        public string CVR { get; set; }
+        public string AndetNavn { get; set; }
+        public string Navn { get; set; }
+        public Firma(string CVR = "", string AndetNavn = "", string Navn = "")
+        {
+            this.CVR = CVR;
+            this.AndetNavn = AndetNavn;
+            this.Navn = Navn;
+        }
     }
 }
