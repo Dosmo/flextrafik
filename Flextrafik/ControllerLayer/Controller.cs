@@ -14,11 +14,11 @@ namespace ControllerLayer
         {
             List<Firma> firmaListe = new List<Firma>();
 
-            DatabaseFacade.GetFirma();
+            //DatabaseFacade.GetFirma(); af sadri
 
             return firmaListe;
 
-            ViewLayer
+            //ViewLayer; af sadri
         }
     }
 }

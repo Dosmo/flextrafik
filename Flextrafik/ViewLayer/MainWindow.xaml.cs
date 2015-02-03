@@ -14,36 +14,25 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ControllerLayer;
 
+//Klasse Eksempel
+class Animal
+{
+    public string Firmanavn { get; set; }
+    public int CVR { get; set; }
+    public string Firmanavn2 { get; set; }
+}
+
 namespace ViewLayer
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
 
-            FirmaList.Items.Add("LOL").SubItems.
-
-            //ListFirmaer();
-
-            
+            FirmaList.Items.Add(new Animal() { Firmanavn = "FirmaNavn1", CVR = 14253698, Firmanavn2 = "FirmaNavn2_1" });
+            FirmaList.Items.Add(new Animal() { Firmanavn = "FirmaNavn2", CVR = 85479635, Firmanavn2 = "FirmaNavn2_2" });
+            FirmaList.Items.Add(new Animal() { Firmanavn = "FirmaNavn3", CVR = 25478569, Firmanavn2 = "FirmaNavn2_3" });
         }
-
-        private void FirmaList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-        /*public void ListFirmaer()
-        {
-            Controller controller = new Controller();
-            List<Firma> firmaListe = controller.GetFirma();
-            
-
-            FirmaList.Items.Add();
-        }*/
-
     }
 }

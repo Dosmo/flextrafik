@@ -1,14 +1,14 @@
 ﻿<Window x:Class="ViewLayer.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <ListView ItemsSource="{Binding }" Name="FirmaList" HorizontalAlignment="Left" Height="301" Margin="10,10,0,0" VerticalAlignment="Top" Width="498" SelectionChanged="FirmaList_SelectionChanged_1">
+        <ListView Name="FirmaList" HorizontalAlignment="Left" Height="299" Margin="10,10,0,0" VerticalAlignment="Top" Width="497">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Firmanavn" Width="166"  />
-                    <GridViewColumn Header="CVR nummer" Width="166"/>
-                    <GridViewColumn Header="Andet firmanavn" Width="166"/>
+                    <GridViewColumn Header="Firmanavn" DisplayMemberBinding="{Binding Firmanavn}" Width="100"/>
+                    <GridViewColumn Header="CVR nummer" DisplayMemberBinding="{Binding CVR}" Width="100"/>
+                    <GridViewColumn Header="Andet firmanavn" DisplayMemberBinding="{Binding Firmanavn2}" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>
