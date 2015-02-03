@@ -25,21 +25,25 @@ namespace ViewLayer
         {
             InitializeComponent();
 
-            ListFirmaer();
+            FirmaList.Items.Add("LOL").SubItems.
+
+            //ListFirmaer();
+
             
         }
-        private void FirmaList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        private void FirmaList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
 
         }
-        public void ListFirmaer()
+        /*public void ListFirmaer()
         {
             Controller controller = new Controller();
             List<Firma> firmaListe = controller.GetFirma();
             
 
             FirmaList.Items.Add();
-        }
+        }*/
 
     }
 }

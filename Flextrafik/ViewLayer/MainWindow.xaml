@@ -3,6 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <ListBox Name="FirmaList" HorizontalAlignment="Left" Height="301" Margin="10,10,0,0" VerticalAlignment="Top" Width="498" SelectionChanged="FirmaList_SelectionChanged"/>
+        <ListView ItemsSource="{Binding }" Name="FirmaList" HorizontalAlignment="Left" Height="301" Margin="10,10,0,0" VerticalAlignment="Top" Width="498" SelectionChanged="FirmaList_SelectionChanged_1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Firmanavn" Width="166"  />
+                    <GridViewColumn Header="CVR nummer" Width="166"/>
+                    <GridViewColumn Header="Andet firmanavn" Width="166"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
