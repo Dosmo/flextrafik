@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ModelLayer
 {
-    class Bud
+    public class Bud
     {
+        public Bud()
+        {
+
+        }
     }
 }

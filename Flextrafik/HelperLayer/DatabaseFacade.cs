@@ -25,18 +25,34 @@ namespace HelperLayer
             conn.Close();
         }
 
-        public void GetBud()
+        public List<Bud> GetBud()
         {
-            SqlCommand cmd = new SqlCommand("GetBud", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            SqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.HasRows && rdr.Read())
+            List<Bud> bids = new List<Bud>();
+            try
             {
-                Console.WriteLine(rdr["DB_COLUMN_NAME"]);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("GetBud", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@CVRNummer", null));
+
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Firms.Add(new Firma(rdr["CVRNummer"].ToString(), rdr["AndetFirma"].ToString(), rdr["Navn"].ToString()));
+                }
+                rdr.Close();
             }
-            Console.ReadKey();
+            catch (SqlException e)
+            {
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+
+            return Firms;
         }
 
         public List<Firma> GetFirma()
