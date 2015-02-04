@@ -34,5 +34,6 @@ namespace ViewLayer
             FirmaList.Items.Add(new Animal() { Firmanavn = "FirmaNavn2", CVR = 85479635, Firmanavn2 = "FirmaNavn2_2" });
             FirmaList.Items.Add(new Animal() { Firmanavn = "FirmaNavn3", CVR = 25478569, Firmanavn2 = "FirmaNavn2_3" });
         }
+
     }
 }
