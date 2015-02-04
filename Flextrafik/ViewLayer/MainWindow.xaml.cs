@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ControllerLayer;
+using ModelLayer;
 
 //Klasse Eksempel
 class Animal
@@ -26,13 +27,17 @@ namespace ViewLayer
 {
     public partial class MainWindow : Window
     {
+        Controller _controller = new Controller();
         public MainWindow()
         {
             InitializeComponent();
-
-            FirmaList.Items.Add(new Animal() { Firmanavn = "FirmaNavn1", CVR = 14253698, Firmanavn2 = "FirmaNavn2_1" });
-            FirmaList.Items.Add(new Animal() { Firmanavn = "FirmaNavn2", CVR = 85479635, Firmanavn2 = "FirmaNavn2_2" });
-            FirmaList.Items.Add(new Animal() { Firmanavn = "FirmaNavn3", CVR = 25478569, Firmanavn2 = "FirmaNavn2_3" });
+            List<Firma> firmList = _controller.GetFirma();
+            foreach (Firma firm in firmList)
+            {
+                FirmaList.Items.Add(firm);
+            }
+     
+             
         }
 
     }

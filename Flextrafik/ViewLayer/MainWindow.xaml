@@ -6,9 +6,9 @@
         <ListView Name="FirmaList" HorizontalAlignment="Left" Height="299" Margin="10,10,0,0" VerticalAlignment="Top" Width="497">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Firmanavn" DisplayMemberBinding="{Binding Firmanavn}" Width="100"/>
+                    <GridViewColumn Header="Firmanavn" DisplayMemberBinding="{Binding Navn}" Width="100"/>
                     <GridViewColumn Header="CVR nummer" DisplayMemberBinding="{Binding CVR}" Width="100"/>
-                    <GridViewColumn Header="Andet firmanavn" DisplayMemberBinding="{Binding Firmanavn2}" Width="100"/>
+                    <GridViewColumn Header="Andet firmanavn" DisplayMemberBinding="{Binding AndetNavn}" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>

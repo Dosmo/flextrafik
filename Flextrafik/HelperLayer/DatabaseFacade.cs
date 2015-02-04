@@ -39,26 +39,34 @@ namespace HelperLayer
             Console.ReadKey();
         }
 
-        public void GetFirma()
+        public List<Firma> GetFirma()
         {
-            SqlCommand cmd = new SqlCommand("GetFirma", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
+            List<Firma> Firms = new List<Firma>();
+            try 
+	        {	        
+		        conn.Open();
+                SqlCommand cmd = new SqlCommand("GetFirma", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@CVRNummer", null));
+            
+                SqlDataReader rdr = cmd.ExecuteReader();
 
-            SqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.HasRows && rdr.Read())
+                while (rdr.Read())
+                {
+                    Firms.Add(new Firma(rdr["CVRNummer"].ToString(), rdr["AndetFirma"].ToString(), rdr["Navn"].ToString()));
+                }
+                rdr.Close();
+	        }
+	        catch (SqlException e)
+	        {
+	        }
+            finally
             {
-                Console.WriteLine(rdr["DB_COLUMN_NAME"]);
+                conn.Close();
+                conn.Dispose();
             }
-            Console.ReadKey();
+            
+            return Firms;
         }
-        //public void databaseConnect()
-        //{
-
-        //}
-        //public static List<Firma> GetFirma()
-        //{
-
-        //}
     }
 }

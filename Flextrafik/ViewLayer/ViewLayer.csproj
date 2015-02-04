@@ -98,6 +98,10 @@
       <Project>{0a6bac59-b82c-47c9-8684-92d64c5bf9c8}</Project>
       <Name>ControllerLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ModelLayer\ModelLayer.csproj">
+      <Project>{e32f51ed-60e4-4ac5-b19a-1aded619260c}</Project>
+      <Name>ModelLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

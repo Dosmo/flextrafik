@@ -10,13 +10,11 @@ namespace ControllerLayer
 {
     public class Controller
     {
+        DatabaseFacade dbf = new DatabaseFacade();
         public List<Firma> GetFirma()
         {
-            List<Firma> firmaListe = new List<Firma>();
-
-            //DatabaseFacade.GetFirma(); af sadri
-
-            return firmaListe;
+            List<Firma> firmList = dbf.GetFirma();
+            return firmList;
 
             //ViewLayer; af sadri
         }
